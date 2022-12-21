@@ -1,14 +1,3 @@
-// Get all the cards
-var cards = document.querySelectorAll(".card");
-
-// Add a click event listener to each card
-cards.forEach(function (card) {
-  card.addEventListener("click", function () {
-    // Toggle the "gray" class on the card
-    card.classList.toggle("gray");
-  });
-});
-
 function elementoAleatorio() {
 
   let imagenSelec;
@@ -37,13 +26,13 @@ function elementoAleatorio() {
       let newDiv = document.createElement("div");
       let newImgBox = document.createElement('div');
       let img = document.createElement("img");
-      
+
       imagenSelec = 'img/imagen' + (numbers[j]) + '.jpg'
-      
+
       newDiv.classList.add('card');
       newImgBox.classList.add('imgBox');
       img.src = imagenSelec;
-      
+
       // Añadimos el elemento al contenedor
       cajita.appendChild(newContainer);
       newContainer.appendChild(newDiv);
@@ -51,4 +40,16 @@ function elementoAleatorio() {
       newImgBox.appendChild(img);
     }
   }
+
+  // Get all the cards
+  var cards = document.querySelectorAll(".card");
+
+  // Add a click event listener to each card
+  cards.forEach(function (card) {
+    card.addEventListener("click", function () {
+      // Toggle the "gray" class on the card
+      card.classList.toggle("gray");
+    });
+  });
+
 }
