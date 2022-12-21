@@ -66,7 +66,7 @@ function elementoAleatorio() {
           let BaltazarArr = ['img/imagen18.jpg', 'img/imagen25.jpg', 'img/imagen26.jpg'];
           let randomBaltazar = Math.floor(Math.random() * (2 + 1));;
           img.src = BaltazarArr[randomBaltazar];
-          let baltazarNames = ['Baltazar', 'Serafin', 'Boche Buena'];
+          let baltazarNames = ['Baltazar', 'Serafin', 'Noche Buena'];
           title.textContent = baltazarNames[randomBaltazar];
           newDiv.appendChild(title);
           newImgBox.appendChild(img);
