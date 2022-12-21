@@ -6,7 +6,7 @@ function elementoAleatorio() {
 
   // Creamos un ciclo que se ejecutará 5 veces (para obtener los números del 1 al 5)
   for (let i = 0; i < 20; i++) {
-    // Generamos un número aleatorio entre 0 y 4 (los índices de nuestro arreglo)
+    // Generamos un número aleatorio entre 0 y 19 (los índices de nuestro arreglo)
     let randomIndex = Math.floor(Math.random() * (i + 1));
 
     // Insertamos el número en el arreglo en la posición aleatoria generada
@@ -41,8 +41,39 @@ function elementoAleatorio() {
       cajita.appendChild(newContainer);
       newContainer.appendChild(newDiv);
       newDiv.appendChild(newImgBox);
-      newDiv.appendChild(title);
-      newImgBox.appendChild(img);
+
+      switch(numbers[j]){
+        case 16:
+          let melchorArr = ['img/imagen16.jpg', 'img/imagen21.jpg', 'img/imagen22.jpg'];
+          let randomMelchor = Math.floor(Math.random() * (2 + 1));;
+          let melchorNames = ['Melchor', 'Arcangel', 'Calcetin'];
+          title.textContent = melchorNames[randomMelchor];
+          img.src = melchorArr[randomMelchor];
+          newDiv.appendChild(title);
+          newImgBox.appendChild(img);
+          break;
+        case 17: 
+          let GasparArr = ['img/imagen17.jpg', 'img/imagen23.jpg', 'img/imagen24.jpg'];
+          let randomGaspar = Math.floor(Math.random() * (2 + 1));;
+          let gasparNames = ['Gaspar', 'Arbolito', 'Santa 2'];
+          title.textContent = gasparNames[randomGaspar];
+          img.src = GasparArr[randomGaspar];
+          newDiv.appendChild(title);
+          newImgBox.appendChild(img);
+          break;
+        case 18:
+          let BaltazarArr = ['img/imagen18.jpg', 'img/imagen25.jpg', 'img/imagen26.jpg'];
+          let randomBaltazar = Math.floor(Math.random() * (2 + 1));;
+          img.src = BaltazarArr[randomBaltazar];
+          let baltazarNames = ['Baltazar', 'Serafin', 'Boche Buena'];
+          title.textContent = baltazarNames[randomBaltazar];
+          newDiv.appendChild(title);
+          newImgBox.appendChild(img);
+          break;
+        default:
+          newDiv.appendChild(title);
+          newImgBox.appendChild(img);
+      }      
     }
   }
 
