@@ -2,6 +2,7 @@ function elementoAleatorio() {
 
   let imagenSelec;
   let numbers = [];
+  let nombres = ['Reno', 'Dulce', 'Regalo', 'Pastel', 'Santa', 'Muerdago', 'Velitas', 'Angelito', 'Oso', 'Girnalda', 'Perrito', 'Pesebre', 'Camapana', 'Cabrita', 'Cerdito', 'Melchor', 'Gaspar', 'Baltazar', 'Pollito', 'Bastón'];
 
   // Creamos un ciclo que se ejecutará 5 veces (para obtener los números del 1 al 5)
   for (let i = 0; i < 20; i++) {
@@ -26,17 +27,21 @@ function elementoAleatorio() {
       let newDiv = document.createElement("div");
       let newImgBox = document.createElement('div');
       let img = document.createElement("img");
+      let title = document.createElement("h3");
 
       imagenSelec = 'img/imagen' + (numbers[j]) + '.jpg'
+      let numArr = numbers[j] - 1;
 
       newDiv.classList.add('card');
       newImgBox.classList.add('imgBox');
       img.src = imagenSelec;
+      title.textContent = nombres[numArr];
 
       // Añadimos el elemento al contenedor
       cajita.appendChild(newContainer);
       newContainer.appendChild(newDiv);
       newDiv.appendChild(newImgBox);
+      newDiv.appendChild(title);
       newImgBox.appendChild(img);
     }
   }
