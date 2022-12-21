@@ -23,7 +23,7 @@ function elementoAleatorio() {
     newContainer.classList.add('container');
 
     for (let j = inicioCiclo; j < controlCiclo; j++) {
-      let cajita = document.querySelector('.box');
+      let cajita = document.querySelector('.elementos');
       let newDiv = document.createElement("div");
       let newImgBox = document.createElement('div');
       let img = document.createElement("img");
@@ -41,6 +41,7 @@ function elementoAleatorio() {
       cajita.appendChild(newContainer);
       newContainer.appendChild(newDiv);
       newDiv.appendChild(newImgBox);
+      title.classList.add('cardTitle');
 
       switch(numbers[j]){
         case 16:
@@ -88,4 +89,25 @@ function elementoAleatorio() {
     });
   });
 
+}
+
+// Esta es la función que inicia el contador de tiempo regresivo
+function startCountdown() {
+  // Inicializamos una variable con el valor de 60 segundos (1 minuto)
+  let seconds = 60;
+
+  // Utilizamos setInterval para ejecutar una función cada 1 segundo
+  let countdown = setInterval(function() {
+    // Decrementamos el valor de la variable seconds en 1
+    seconds--;
+
+    // Actualizamos el texto del elemento h1 con el valor actual de la variable seconds
+    document.getElementById("countdown").textContent = seconds + " segundos restantes";
+
+    // Si la variable seconds llega a 0, detenemos el intervalo y mostramos el modal
+    if (seconds == 0) {
+      clearInterval(countdown);
+      document.getElementById("modal").style.display = "block";
+    }
+  }, 1000); // 1000 milisegundos = 1 segundo
 }
